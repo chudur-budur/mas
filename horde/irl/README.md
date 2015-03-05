@@ -108,15 +108,15 @@ Notes on Inverse-RL experiments
   there are some small modifications.  		
 	 
 #### 7. Rebuilding FSA from the Q-table:
-	To learn a behaviour is now straight forward, learn the above function using 
-	generic Q-learning algorithm, and obviously the Q-table structure is same as
-	the reward matrix, where each of the matrix entries are the corresponding Q-values. 
-
-	The interesting part is to rebuild the automata from the learned Q-table. The 
-	algorithm is simple. After the Q-table is being learned, do the maneuver for 
-	one more time and during the behavior transition record the examples. From these
-	transition and recorded examples, we will be able to construct the FSA again.
+ To learn a behaviour is now straight forward, learn the above function using 
+ generic Q-learning algorithm, and obviously the Q-table structure is same as
+ the reward matrix, where each of the matrix entries are the corresponding Q-values. 
+ 
+ The interesting part is to rebuild the automata from the learned Q-table. The 
+ algorithm is simple. After the Q-table is being learned, do the maneuver for 
+ one more time and during the behavior transition record the examples. From these
+ transition and recorded examples, we will be able to construct the FSA again.
 
 #### 8. Transfer the reward R-table or the Q-table?
-	We need to transfer R-table, not Q. Because Q-table may be constructed from
-	a particular perspective which may not be applicable to other scenarios. 
+ We need to transfer R-table, not Q. Because Q-table may be constructed from
+ a particular perspective which may not be applicable to other scenarios. 
