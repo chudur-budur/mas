@@ -16,7 +16,7 @@ Notes on Inverse-RL experiments
  to another robot to do wall-follow on opposite direction.
 
 #### 3. Decomposability on the Feature Space:
- If you want to build a behavior that requires {F1 U F2} feature sets, 
+ If you want to build a behavior that requires $$\{F1 \cup F2\}$$ feature sets, 
  then you need to train the transition functions on {F1 U F2} in HiTAB. 
  But in this IRL case, you can build a reward function R1 <- {F1} and 
  another reward function R2 <- {F2}, then the agent can learn a behaviour 
