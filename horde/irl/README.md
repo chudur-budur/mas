@@ -76,19 +76,19 @@ Notes on Inverse-RL experiments
   to construct the reward function as matrix in an interesting 
   way --
   
-  			Traget Behavior
-  
-  		     | B1 | B2 | ... | Bn |
-  		---------------------------
-  		B1   | x  | a  | ... | b  |
-  		---------------------------
-  		B2   | c  | d  | ... | e  |
-  Start  Behavior 	---------------------------
-  		.			.
-  		.			.
-  		---------------------------
-  		Bn   | f  | g  | ... | h  |
-  		---------------------------
+					Traget Behavior
+
+				     | B1 | B2 | ... | Bn |
+  				---------------------------
+  				B1   | x  | a  | ... | b  |
+  				---------------------------
+  				B2   | c  | d  | ... | e  |
+	        Start  Behavior ---------------------------
+  				.			.
+  				.			.
+  				---------------------------
+  				Bn   | f  | g  | ... | h  |
+  				---------------------------
   
   Now, this becomes obvious that each of the matrix entries are
   reward values, and they will be interpreted as --
