@@ -58,7 +58,7 @@ Notes on Inverse-RL experiments
  and thus the policy length becomes unbounded and the states and actions 
  need to be interpreted as Si -> [(Bi, f(.))], Ai -> Bj.
 
- * ##### 6.1. Reinterpretation for IRL:
+ * #### 6.1. Reinterpretation for IRL:
   Now in the IRL case, we will consider each source and target 
   behavior as states, Bi is the start state and Bj is the target 
   state and action is a transition so, a policy will look like this
