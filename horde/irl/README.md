@@ -63,13 +63,13 @@ Notes on Inverse-RL experiments
   behavior as states, Bi is the start state and Bj is the target 
   state and action is a transition so, a policy will look like this
   
-	pi = {(B1, [f(.), B2]), (B2, [f(.), B4]) ... }
+  		pi = {(B1, [f(.), B2]), (B2, [f(.), B4]) ... }
   
   and moreover suppose that the feature values that caused a
   transition Bi -> Bj is fij(.), and what if we consider this 
   Aij -> [fij(.) Bj] as action ? now the policy looks like --
   
-	pi = {(B1, [f12(.), B2]), (B2, [f24(.), B4]), ... } 
+  		pi = {(B1, [f12(.), B2]), (B2, [f24(.), B4]), ... } 
   
   still the policy length is unbounded, but we got rid off the 
   requirement of enumerable set of states that can give us a way 
