@@ -58,54 +58,54 @@ Notes on Inverse-RL experiments
  and thus the policy length becomes unbounded and the states and actions 
  need to be interpreted as Si -> [(Bi, f(.))], Ai -> Bj.
 
-  * Reinterpretation for IRL:
-     Now in the IRL case, we will consider each source and target 
-     behavior as states, Bi is the start state and Bj is the target 
-     state and action is a transition so, a policy will look like this
-     
-     	pi = {(B1, [f(.), B2]), (B2, [f(.), B4]) ... }
-     
-     and moreover suppose that the feature values that caused a
-     transition Bi -> Bj is fij(.), and what if we consider this 
-     Aij -> [fij(.) Bj] as action ? now the policy looks like --
-     
-     	pi = {(B1, [f12(.), B2]), (B2, [f24(.), B4]), ... } 
-     
-     still the policy length is unbounded, but we got rid off the 
-     requirement of enumerable set of states that can give us a way 
-     to construct the reward function as matrix in an interesting 
-     way --
-     
-     			Traget Behavior
-     
-     		     | B1 | B2 | ... | Bn |
-     		---------------------------
-     		B1   | x  | a  | ... | b  |
-     		---------------------------
-     		B2   | c  | d  | ... | e  |
-Start Behavior 	---------------------------
-     		.			.
-     		.			.
-     		---------------------------
-     		Bn   | f  | g  | ... | h  |
-     		---------------------------
-     
-     Now, this becomes obvious that each of the matrix entries are
-     reward values, and they will be interpreted as --
-     
-        * If I was doing B1 and I read feature values f13(.)
-     	  i.e. (B1->B3), and then I start doing B2, what will 
-     	  be my reward?
-     
-     	* In the above case the agent will get some punishment
-     	  because, the robot read feature values similar to f13(.)
-     	  , which means the agent needs to do behavior B3. But the
-     	  robot is doing B2, etc.
-     
-     Now, the next part is to calculate these reward values. Obviously
-     the reward values will be calculated from the expert demonstrations.
-     Although the algorithm is inspired from Nguen & Abbeel's work but
-     there are some small modifications.  		
+ * ##### 6.1. Reinterpretation for IRL:
+  Now in the IRL case, we will consider each source and target 
+  behavior as states, Bi is the start state and Bj is the target 
+  state and action is a transition so, a policy will look like this
+  
+  	pi = {(B1, [f(.), B2]), (B2, [f(.), B4]) ... }
+  
+  and moreover suppose that the feature values that caused a
+  transition Bi -> Bj is fij(.), and what if we consider this 
+  Aij -> [fij(.) Bj] as action ? now the policy looks like --
+  
+  	pi = {(B1, [f12(.), B2]), (B2, [f24(.), B4]), ... } 
+  
+  still the policy length is unbounded, but we got rid off the 
+  requirement of enumerable set of states that can give us a way 
+  to construct the reward function as matrix in an interesting 
+  way --
+  
+  			Traget Behavior
+  
+  		     | B1 | B2 | ... | Bn |
+  		---------------------------
+  		B1   | x  | a  | ... | b  |
+  		---------------------------
+  		B2   | c  | d  | ... | e  |
+  Start  Behavior 	---------------------------
+  		.			.
+  		.			.
+  		---------------------------
+  		Bn   | f  | g  | ... | h  |
+  		---------------------------
+  
+  Now, this becomes obvious that each of the matrix entries are
+  reward values, and they will be interpreted as --
+
+  * If I was doing B1 and I read feature values f13(.)
+    i.e. (B1->B3), and then I start doing B2, what will 
+    be my reward?
+  
+  * In the above case the agent will get some punishment
+    because, the robot read feature values similar to f13(.)
+    , which means the agent needs to do behavior B3. But the
+    robot is doing B2, etc.
+  
+  Now, the next part is to calculate these reward values. Obviously
+  the reward values will be calculated from the expert demonstrations.
+  Although the algorithm is inspired from Nguen & Abbeel's work but
+  there are some small modifications.  		
 	 
 #### 7. Rebuilding FSA from the Q-table:
 	To learn a behaviour is now straight forward, learn the above function using 
