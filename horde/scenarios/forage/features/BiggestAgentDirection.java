@@ -1,0 +1,23 @@
+package sim.app.horde.scenarios.forage.features;
+
+import sim.app.horde.features.*;
+import sim.app.horde.scenarios.forage.targets.ClosestBiggestAttachedAgent;
+import sim.app.horde.targets.Target;
+
+public class BiggestAgentDirection extends TargetDirection
+{
+
+	private static final long serialVersionUID = 1L;
+
+	public BiggestAgentDirection()
+	{
+		super();
+		//name = "DirectionBiggestAgent";
+		targets = new Target[1];
+		Target t = new ClosestBiggestAttachedAgent();
+		setTarget(0, t);
+		targetNames = new String[] { t.toString() };
+		level = 1;
+	}
+
+}
