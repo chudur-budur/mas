@@ -1,4 +1,4 @@
 mas
 =====
 
-A local MAS (Multiagent System) related codes for adhoc dev.
+A local Multiagent System (MAS) related codes for adhoc dev.
